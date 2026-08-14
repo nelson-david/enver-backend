@@ -1,0 +1,33 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "tsx watch --env-file=.env src/index.ts",
+        "build": "tsc",
+        "start": "node dist/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@clerk/backend": "^3.16.0",
+        "@clerk/hono": "^0.1.61",
+        "@hono/node-server": "^2.1.0",
+        "@hono/zod-validator": "^0.9.0",
+        "dotenv": "^17.4.2",
+        "hono": "^4.13.0",
+        "hono-rate-limiter": "^0.5.3",
+        "mongoose": "^9.9.1",
+        "winston": "^3.19.0",
+        "winston-loki": "^6.1.6",
+        "zod": "^4.4.3"
+    },
+    "devDependencies": {
+        "@types/node": "^26.1.2",
+        "tsx": "^4.23.9",
+        "typescript": "^7.0.2"
+    }
+}

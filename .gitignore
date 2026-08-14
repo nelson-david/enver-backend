@@ -1,0 +1,68 @@
+# Server Dependencies
+node_modules/
+dist/
+build/
+.cache/
+*.tsbuildinfo
+
+# Environment Files - NEVER commit these!
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+server.log
+pino-*
+
+# Runtime PIDs
+*.pid
+*.seed
+*.seed.*
+
+# Coverage
+coverage/
+.nyc_output/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+ ehthumbs.db
+Thumbs.db
+
+# Database files
+*.db
+*.sqlite*
+*.mdb
+
+# Temporary Files
+*.tmp
+*.temp
+*.lock
+
+# Yarn
+.yarn
+.yarnrc.yml
+
+# Optional npm
+# package-lock.json
+
+# Testing
+test-results/
+playwright-report/
+playwright/.cache/
