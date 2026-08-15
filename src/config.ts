@@ -6,7 +6,7 @@ export const config = {
 
     corsOrigins: process.env.ALLOWED_ORIGINS
         ? process.env.ALLOWED_ORIGINS.split(",")
-        : ["http://localhost:3000"],
+        : ["http://localhost:3000", "https://enver-os.vercel.app"],
 
     rateLimit: {
         windowMs: 15 * 60 * 1000,
