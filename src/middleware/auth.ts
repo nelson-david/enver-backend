@@ -42,9 +42,10 @@ export async function resolveAuthUser(c: Context, next: Next) {
                     );
                 }
 
+                authType = "token";
+
                 // IP address validation for token-based authentication
                 if (
-                    authType === "token" &&
                     apiToken.ipAddress &&
                     apiToken.ipAddress !== "unknown"
                 ) {
@@ -64,7 +65,6 @@ export async function resolveAuthUser(c: Context, next: Next) {
                 }
 
                 user = apiToken.userId;
-                authType = "token";
                 c.set("tokenScopes", apiToken.scopes);
 
                 // Asynchronously update lastUsedAt
