@@ -4,6 +4,7 @@ import { z } from "zod";
 import { EnvEnvironment, SecretShare, User } from "../../database/schema.js";
 import { getAuth } from "@clerk/hono";
 import { createClerkClient } from "@clerk/backend";
+import { generateRandomCustomId } from "../../util/helper.js";
 
 const clerkClient = createClerkClient({
     secretKey: process.env.CLERK_SECRET_KEY,
@@ -43,7 +44,14 @@ userRoutes.post("/", zValidator("json", createUserSchema), async (c) => {
             if (imageUrl) user.imageUrl = imageUrl;
             await user.save();
         } else {
-            user = await User.create({ clerkId, email, name, imageUrl });
+            const customId = generateRandomCustomId();
+            user = await User.create({
+                customId,
+                clerkId,
+                email,
+                name,
+                imageUrl,
+            });
         }
         return c.json({ success: true, user }, 201);
     } catch (err: any) {
